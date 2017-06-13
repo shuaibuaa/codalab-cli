@@ -1260,9 +1260,9 @@ class BundleCLI(object):
         dc = DockerClient()
         container_id = dc.create_container(bundle_path, uuid, args.command, docker_image, request_network, dependencies, ['-it'])
         print >>self.stdout, '===='
-        print >>self.stdout, 'Container ID: ', container_id[:12]
-        print >>self.stdout, 'Local Bundle UUID: ', uuid
-        print >>self.stdout, 'You can find local bundle contents in: ', bundle_path
+        print >>self.stdout, 'Container ID:', container_id[:12]
+        print >>self.stdout, 'Local Bundle UUID:', uuid
+        print >>self.stdout, 'You can find local bundle contents in:', bundle_path
         print >>self.stdout, '===='
         os.system('docker start -ai {}'.format(container_id))
 
